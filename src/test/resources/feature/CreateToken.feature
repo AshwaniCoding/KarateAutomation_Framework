@@ -1,12 +1,11 @@
-Feature: Create booking
+Feature: Generate Token
 
   Background:
-    * def body = read("classpath://json//create_booking.json")
+    * def body = read("classpath://json//generate_token.json")
 
-
-  Scenario: Verify user can create new booking
+  Scenario: Verify user can generate token
     Given url 'https://restful-booker.herokuapp.com'
-    And path '/booking'
+    And path '/auth'
     And header Content-Type = "application/json"
     And header Accept = "application/json"
     And request body
